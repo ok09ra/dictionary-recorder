@@ -1,4 +1,4 @@
-# Dictionary Recoder
+# Dictionary Recorder
 
 When you read papers and hit unfamiliar terms, you want a quick vocab log. This kit gives you a force-click shortcut to append those words (with page title/URL) into a TSV, and a daily git autopush so the log stays backed up.
 

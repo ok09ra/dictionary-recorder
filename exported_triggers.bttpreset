@@ -1,0 +1,95 @@
+[
+  {
+    "BTTLastUpdatedAt" : 1767324833.1879349,
+    "BTTTriggerType" : 203,
+    "BTTTriggerTypeDescriptionReadOnly" : "Single Finger FORCE Click",
+    "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+    "BTTUUID" : "1D0F5A45-7B9C-4CDF-80A0-FB906999D1B0",
+    "BTTOrder" : 0,
+    "BTTActionsToExecute" : [
+      {
+        "BTTLastUpdatedAt" : 1767324833.1884089,
+        "BTTTriggerParentUUID" : "1D0F5A45-7B9C-4CDF-80A0-FB906999D1B0",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "D9D32FD2-4EF6-47EF-928B-833FEA5803C8",
+        "BTTPredefinedActionType" : 3,
+        "BTTPredefinedActionName" : "Left Click (At Current Mouse Position)",
+        "BTTOrder" : 0
+      },
+      {
+        "BTTLastUpdatedAt" : 1767324833.188931,
+        "BTTTriggerParentUUID" : "1D0F5A45-7B9C-4CDF-80A0-FB906999D1B0",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "38CD8549-D0B1-416D-8E02-BF3ECB7C5B61",
+        "BTTPredefinedActionType" : 3,
+        "BTTPredefinedActionName" : "Left Click (At Current Mouse Position)",
+        "BTTOrder" : 1
+      },
+      {
+        "BTTLastUpdatedAt" : 1767324833.1892672,
+        "BTTTriggerParentUUID" : "1D0F5A45-7B9C-4CDF-80A0-FB906999D1B0",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "E3329ADD-5941-411C-8A7F-66FB6EF7A72A",
+        "BTTLayoutIndependentActionChar" : "d",
+        "BTTShortcutToSend" : "59,55,2",
+        "BTTOrder" : 2
+      },
+      {
+        "BTTLastUpdatedAt" : 1767324833.1895709,
+        "BTTTriggerParentUUID" : "1D0F5A45-7B9C-4CDF-80A0-FB906999D1B0",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "36A739D1-0783-4A20-A27F-540129456F4E",
+        "BTTPredefinedActionType" : 129,
+        "BTTPredefinedActionName" : "Pause Execution  or  Delay Next Action (blocking)",
+        "BTTDelayNextActionBy" : "0.01",
+        "BTTOrder" : 3
+      },
+      {
+        "BTTLastUpdatedAt" : 1767324833.1898689,
+        "BTTTriggerParentUUID" : "1D0F5A45-7B9C-4CDF-80A0-FB906999D1B0",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "CFBB2ACC-4460-468F-8C24-CF4886AE5FC8",
+        "BTTPredefinedActionType" : 256,
+        "BTTPredefinedActionName" : "Save selected text to variable",
+        "BTTGenericActionConfig" : "sel",
+        "BTTOrder" : 4
+      },
+      {
+        "BTTLastUpdatedAt" : 1767324833.190146,
+        "BTTTriggerParentUUID" : "1D0F5A45-7B9C-4CDF-80A0-FB906999D1B0",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "939C4708-4250-4F0B-9DA2-7DF7E4DE0F74",
+        "BTTPredefinedActionType" : 129,
+        "BTTPredefinedActionName" : "Pause Execution  or  Delay Next Action (blocking)",
+        "BTTDelayNextActionBy" : "0.01",
+        "BTTOrder" : 5
+      },
+      {
+        "BTTLastUpdatedAt" : 1767325224.801734,
+        "BTTTriggerParentUUID" : "1D0F5A45-7B9C-4CDF-80A0-FB906999D1B0",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "A8515470-62EE-4209-BA74-7B84211F220D",
+        "BTTPredefinedActionType" : 172,
+        "BTTPredefinedActionName" : "Run Apple Script (blocking)",
+        "BTTAdditionalActionData" : {
+          "BTTAppleScriptRunInBackground" : false,
+          "BTTAIScriptType" : 3,
+          "BTTScriptType" : 0,
+          "BTTAppleScriptString" : "on run\n\t-- ===== paths (configurable) =====\n\tset docPath to (POSIX path of (path to documents folder))\n\tset defaultLogPath to docPath & \"dictionary_recoder/word_lookup_log.tsv\"\n\tset configPath to docPath & \"dictionary_recoder/config.env\"\n\tset logPath to defaultLogPath\n\tset dq to quote\n\tset innerScript to \"if [ -f \" & dq & \"$CONFIG_FILE\" & dq & \" ]; then source \" & dq & \"$CONFIG_FILE\" & dq & \"; fi; printf %s \" & dq & \"${WORD_LOOKUP_LOG:-$DEFAULT_LOG}\" & dq\n\ttry\n\t\tset cmd to \"CONFIG_FILE=\" & quoted form of configPath & \" DEFAULT_LOG=\" & quoted form of defaultLogPath & \" bash -lc \" & quoted form of innerScript\n\t\tset logPath to do shell script cmd\n\tend try\n\tset dirPath to do shell script \"dirname \" & quoted form of logPath\n\tdo shell script \"mkdir -p \" & quoted form of dirPath\n\n\t-- ===== header (once) =====\n\tdo shell script \"if [ ! -f \" & quoted form of logPath & \" ]; then printf 'timestamp\\tterm\\ttitle\\turl\\n' > \" & quoted form of logPath & \"; fi\"\n\n\t-- ===== get selected text (BTT variable sel) =====\n\tset term to \"\"\n\trepeat with i from 1 to 10\n\t\ttry\n\t\t\ttell application \"BetterTouchTool\"\n\t\t\t\tset term to get_string_variable \"sel\"\n\t\t\tend tell\n\t\tend try\n\t\tif term is not missing value then\n\t\t\tset term to term as text\n\t\t\tset term to my tsvSafe(term)\n\t\t\tif term is not \"\" then exit repeat\n\t\tend if\n\t\tdelay 0.03\n\tend repeat\n\n\t-- ===== fallback: safe copy selected text (clipboard restored) =====\n\tif term is \"\" then\n\t\tset term to my tsvSafe(my safeCopySelectedText())\n\tend if\n\tif term is \"\" then return\n\n\t-- ===== Vivaldi: URL & Title =====\n\tset pageURL to \"\"\n\tset pageTitle to \"\"\n\ttry\n\t\ttell application \"Vivaldi\"\n\t\t\tset pageURL to URL of active tab of front window\n\t\t\tset pageTitle to title of active tab of front window\n\t\tend tell\n\tend try\n\tif pageURL is missing value then set pageURL to \"\"\n\tif pageTitle is missing value then set pageTitle to \"\"\n\tset pageURL to my tsvSafe(pageURL as text)\n\tset pageTitle to my tsvSafe(pageTitle as text)\n\n\t-- ===== timestamp (JST) =====\n\tset ts to do shell script \"TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S'\"\n\n\t-- ===== append (lock to avoid race) =====\n\tset cmd to \"\\npython3 - <<'PY'\\nimport fcntl\\n\\nlogpath = \" & quoted form of logPath & \"\\nts = \" & quoted form of ts & \"\\nterm = \" & quoted form of term & \"\\ntitle = \" & quoted form of pageTitle & \"\\nurl = \" & quoted form of pageURL & \"\\n\\nlockpath = logpath + '.lock'\\nwith open(lockpath, 'w') as lockf:\\n    fcntl.flock(lockf, fcntl.LOCK_EX)\\n    with open(logpath, 'a', encoding='utf-8') as f:\\n        f.write(f\\\"{ts}\\\\t{term}\\\\t{title}\\\\t{url}\\\\n\\\")\\n    fcntl.flock(lockf, fcntl.LOCK_UN)\\nPY\"\n\tdo shell script cmd\nend run\n\n-- ===== TSV safe: collapse newline/tab only =====\non tsvSafe(s)\n\tif s is missing value then return \"\"\n\tset s to s as text\n\tset s to my replaceText(return, \" \" , s)\n\tset s to my replaceText(linefeed, \" \" , s)\n\tset s to my replaceText(tab, \" \" , s)\n\treturn my trimSpaces(s)\nend tsvSafe\n\n-- fallback: copy selected text but restore clipboard\non safeCopySelectedText()\n\tset oldPlain to do shell script \"pbpaste || true\"\n\ttry\n\t\ttell application \"System Events\"\n\t\t\tkeystroke \"c\" using {command down}\n\t\tend tell\n\t\tdelay 0.15\n\tend try\n\tset newPlain to do shell script \"pbpaste || true\"\n\tdo shell script \"printf %s \" & quoted form of oldPlain & \" | pbcopy\"\n\treturn newPlain\nend safeCopySelectedText\n\non replaceText(findText, replaceText, theText)\n\tset oldTIDs to AppleScript's text item delimiters\n\tset AppleScript's text item delimiters to findText\n\tset parts to text items of theText\n\tset AppleScript's text item delimiters to replaceText\n\tset newText to parts as text\n\tset AppleScript's text item delimiters to oldTIDs\n\treturn newText\nend replaceText\n\non trimSpaces(s)\n\trepeat while s begins with \" \"\n\t\tset s to text 2 thru -1 of s\n\tend repeat\n\trepeat while s ends with \" \"\n\t\tset s to text 1 thru -2 of s\n\tend repeat\n\treturn s\nend trimSpaces",
+          "SelectedAction" : 172,
+          "BTTAppleScriptUsePath" : false,
+          "BTTScriptLocation" : 0
+        },
+        "BTTInlineAppleScript" : "on run\n\t-- ===== paths (configurable) =====\n\tset docPath to (POSIX path of (path to documents folder))\n\tset defaultLogPath to docPath & \"dictionary_recoder/word_lookup_log.tsv\"\n\tset configPath to docPath & \"dictionary_recoder/config.env\"\n\tset logPath to defaultLogPath\n\tset dq to quote\n\tset innerScript to \"if [ -f \" & dq & \"$CONFIG_FILE\" & dq & \" ]; then source \" & dq & \"$CONFIG_FILE\" & dq & \"; fi; printf %s \" & dq & \"${WORD_LOOKUP_LOG:-$DEFAULT_LOG}\" & dq\n\ttry\n\t\tset cmd to \"CONFIG_FILE=\" & quoted form of configPath & \" DEFAULT_LOG=\" & quoted form of defaultLogPath & \" bash -lc \" & quoted form of innerScript\n\t\tset logPath to do shell script cmd\n\tend try\n\tset dirPath to do shell script \"dirname \" & quoted form of logPath\n\tdo shell script \"mkdir -p \" & quoted form of dirPath\n\n\t-- ===== header (once) =====\n\tdo shell script \"if [ ! -f \" & quoted form of logPath & \" ]; then printf 'timestamp\\tterm\\ttitle\\turl\\n' > \" & quoted form of logPath & \"; fi\"\n\n\t-- ===== get selected text (BTT variable sel) =====\n\tset term to \"\"\n\trepeat with i from 1 to 10\n\t\ttry\n\t\t\ttell application \"BetterTouchTool\"\n\t\t\t\tset term to get_string_variable \"sel\"\n\t\t\tend tell\n\t\tend try\n\t\tif term is not missing value then\n\t\t\tset term to term as text\n\t\t\tset term to my tsvSafe(term)\n\t\t\tif term is not \"\" then exit repeat\n\t\tend if\n\t\tdelay 0.03\n\tend repeat\n\n\t-- ===== fallback: safe copy selected text (clipboard restored) =====\n\tif term is \"\" then\n\t\tset term to my tsvSafe(my safeCopySelectedText())\n\tend if\n\tif term is \"\" then return\n\n\t-- ===== Vivaldi: URL & Title =====\n\tset pageURL to \"\"\n\tset pageTitle to \"\"\n\ttry\n\t\ttell application \"Vivaldi\"\n\t\t\tset pageURL to URL of active tab of front window\n\t\t\tset pageTitle to title of active tab of front window\n\t\tend tell\n\tend try\n\tif pageURL is missing value then set pageURL to \"\"\n\tif pageTitle is missing value then set pageTitle to \"\"\n\tset pageURL to my tsvSafe(pageURL as text)\n\tset pageTitle to my tsvSafe(pageTitle as text)\n\n\t-- ===== timestamp (JST) =====\n\tset ts to do shell script \"TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S'\"\n\n\t-- ===== append (lock to avoid race) =====\n\tset cmd to \"\\npython3 - <<'PY'\\nimport fcntl\\n\\nlogpath = \" & quoted form of logPath & \"\\nts = \" & quoted form of ts & \"\\nterm = \" & quoted form of term & \"\\ntitle = \" & quoted form of pageTitle & \"\\nurl = \" & quoted form of pageURL & \"\\n\\nlockpath = logpath + '.lock'\\nwith open(lockpath, 'w') as lockf:\\n    fcntl.flock(lockf, fcntl.LOCK_EX)\\n    with open(logpath, 'a', encoding='utf-8') as f:\\n        f.write(f\\\"{ts}\\\\t{term}\\\\t{title}\\\\t{url}\\\\n\\\")\\n    fcntl.flock(lockf, fcntl.LOCK_UN)\\nPY\"\n\tdo shell script cmd\nend run\n\n-- ===== TSV safe: collapse newline/tab only =====\non tsvSafe(s)\n\tif s is missing value then return \"\"\n\tset s to s as text\n\tset s to my replaceText(return, \" \" , s)\n\tset s to my replaceText(linefeed, \" \" , s)\n\tset s to my replaceText(tab, \" \" , s)\n\treturn my trimSpaces(s)\nend tsvSafe\n\n-- fallback: copy selected text but restore clipboard\non safeCopySelectedText()\n\tset oldPlain to do shell script \"pbpaste || true\"\n\ttry\n\t\ttell application \"System Events\"\n\t\t\tkeystroke \"c\" using {command down}\n\t\tend tell\n\t\tdelay 0.15\n\tend try\n\tset newPlain to do shell script \"pbpaste || true\"\n\tdo shell script \"printf %s \" & quoted form of oldPlain & \" | pbcopy\"\n\treturn newPlain\nend safeCopySelectedText\n\non replaceText(findText, replaceText, theText)\n\tset oldTIDs to AppleScript's text item delimiters\n\tset AppleScript's text item delimiters to findText\n\tset parts to text items of theText\n\tset AppleScript's text item delimiters to replaceText\n\tset newText to parts as text\n\tset AppleScript's text item delimiters to oldTIDs\n\treturn newText\nend replaceText\n\non trimSpaces(s)\n\trepeat while s begins with \" \"\n\t\tset s to text 2 thru -1 of s\n\tend repeat\n\trepeat while s ends with \" \"\n\t\tset s to text 1 thru -2 of s\n\tend repeat\n\treturn s\nend trimSpaces",
+        "BTTOrder" : 6
+      }
+    ]
+  }
+]

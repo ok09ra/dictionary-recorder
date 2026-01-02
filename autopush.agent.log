@@ -1,0 +1,65 @@
+2026-01-02 16:37:33 | START pid=44784 whoami=okudasouda
+2026-01-02 16:37:33 | fetch origin...
+  From github.com:ok09ra/dictionary_recoder
+   = [up to date]      master     -> origin/master
+2026-01-02 16:37:35 | fetch done (exit=0)
+2026-01-02 16:37:35 | branch=master
+2026-01-02 16:37:35 | pull --rebase origin master...
+  error: cannot pull with rebase: You have unstaged changes.
+  error: please commit or stash them.
+2026-01-02 16:37:36 | rebase done
+2026-01-02 16:37:36 | git add -A
+2026-01-02 16:37:36 | commit...
+  [master cc2a5bf] dairy commit 2026-01-02 16:37:36
+   6 files changed, 66 deletions(-)
+   delete mode 100644 .github/workflows/autopush.yml
+   delete mode 100644 com.okuda.dictionaryrecorder.autopush.plist
+   delete mode 100644 commit_log.txt
+   delete mode 100644 cron.err.log
+   delete mode 100644 cron.out.log
+   delete mode 100644 cron.wrapper.log
+2026-01-02 16:37:36 | push origin master...
+  To github.com:ok09ra/dictionary_recoder.git
+     60278d4..cc2a5bf  master -> master
+2026-01-02 16:37:38 | push done (exit=0)
+2026-01-02 16:37:38 | DONE
+2026-01-02 16:48:29 | START pid=52510 whoami=okudasouda
+2026-01-02 16:48:29 | fetch origin...
+  From github.com:ok09ra/dictionary_recoder
+   = [up to date]      master     -> origin/master
+2026-01-02 16:48:31 | fetch done (exit=0)
+2026-01-02 16:48:31 | branch=master
+2026-01-02 16:48:31 | pull --rebase origin master...
+  error: cannot pull with rebase: You have unstaged changes.
+  error: please commit or stash them.
+2026-01-02 16:48:31 | rebase done
+2026-01-02 16:48:31 | git add -A
+2026-01-02 16:48:31 | commit...
+  [master e3508ab] dairy commit 2026-01-02 16:48:31
+   4 files changed, 107 insertions(+), 49 deletions(-)
+   rewrite autopush_launchagent.sh (66%)
+   create mode 100644 config.env
+2026-01-02 16:48:31 | push origin master...
+  To github.com:ok09ra/dictionary_recoder.git
+     cc2a5bf..e3508ab  master -> master
+2026-01-02 16:48:33 | push done (exit=0)
+2026-01-02 16:48:33 | DONE
+2026-01-02 17:13:09 | START pid=71618 whoami=okudasouda
+2026-01-02 17:13:09 | fetch origin...
+  From github.com:ok09ra/dictionary_recoder
+   = [up to date]      master     -> origin/master
+2026-01-02 17:13:11 | fetch done (exit=0)
+2026-01-02 17:13:11 | branch=master
+2026-01-02 17:13:11 | pull --rebase origin master...
+  error: cannot pull with rebase: You have unstaged changes.
+  error: please commit or stash them.
+2026-01-02 17:13:11 | rebase done
+2026-01-02 17:13:11 | git add -A
+2026-01-02 17:13:11 | commit...
+  [master 580551c] dairy commit 2026-01-02 17:13:11
+   2 files changed, 2 insertions(+), 1 deletion(-)
+2026-01-02 17:13:11 | push origin master...
+  To github.com:ok09ra/dictionary_recoder.git
+     7c94747..580551c  master -> master
+2026-01-02 17:13:13 | push done (exit=0)
+2026-01-02 17:13:13 | DONE
